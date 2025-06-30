@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sabor do brasil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                
+                <div class="col-md-3">
+                   
+                    <div class="perfil">
+                        <img id="fotoPerfil" alt="Foto do usuário">
+                        <h2 id="nomePerfil"><span id="nomeUsuarioDinamico"></span></h2>
+                        <hr class="linha-laranja">
+                        <div class="d-flex justify-content-center gap-4 mt-3">
+                            <div class="text-center">
+                                <i class="bi bi-hand-thumbs-up-fill"></i>
+                                <span class="fw-normal" id="curtidasPerfil">28</span>
+                                <p class="mb-0">likes</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="bi bi-hand-thumbs-down-fill"></i>
+                                <span class="fw-normal" id="deslikesPerfil">7</span>
+                                <p class="mb-0">deslikes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+                <div class="col-md-6" ">
+                   
+                   
+                    <div class="card card-custom mb-4" style="border: 1px solid #ccc;">
+                        <div class="d-flex align-items-center gap-2 p-2">
+                            <img src="" id="fotoPub-1" class="rounded-circle" width="40" height="40" alt="Foto do usuário">
+                            <span id="nomePub-1" class="fw-bold"></span>
+                        </div>
+                        <div>
+                            <img src="img/feijão_carne_batata-frita_salada.jpg" class="card-img-top img-fluid"
+                                alt="Imagem do Prato">
+                        </div>
+                        <div class="card-body">
+                           
+                            <div class="text-start d-flex align-items-center gap-3 mb-2">
+                                <a href="#" class="text-decoration-none" id="btn-like-1" onclick="toggleLike(1); return false;">
+                                    <i class="bi bi-hand-thumbs-up text-black" id="like-icon-1"></i>
+                                </a>
+                                <span id="like-1">4</span>
+                                <a href="#" class="text-decoration-none" id="btn-deslike-1" onclick="toggleDeslike(1); return false;">
+                                    <i class="bi bi-hand-thumbs-down text-black" id="deslike-icon-1"></i>
+                                </a>
+                                <span id="deslike-1">1</span>
+                                <a href="#" class="text-decoration-none" title="Ver comentários" onclick="toggleComentarios(1); return false;">
+                                    <i class="bi bi-chat-dots"></i> 3
+                                </a>
+                            </div>
+                            
+                            <p class="card-text" id="descricao-1">
+                                Este é um prato incrível feito com ingredientes frescos e saborosos. Ideal para qualquer ocasião.
+                            </p>
+                            <div id="editar-descricao-area-1" style="display:none;">
+                                <textarea id="input-descricao-1" class="form-control mb-2"></textarea>
+                                <button class="btn btn-success btn-sm" onclick="salvarDescricao(1)">Salvar</button>
+                                <button class="btn btn-secondary btn-sm" onclick="cancelarEdicaoDescricao(1)">Cancelar</button>
+                            </div>
+                           
+                            <div class="comentarios-abaixo mt-2" id="comentarios-abaixo-1" style="display:none;">
+                                <div id="lista-comentarios-1"></div>
+                                <form class="mt-2 d-flex" onsubmit="adicionarComentario(event, 1)">
+                                    <input type="text" class="form-control me-2" id="input-comentario-1" placeholder="Digite seu comentário">
+                                    <button type="submit" class="btn btn-black" style="display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-send"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card card-custom mb-4" style="border: 1px solid #ccc;">
+                        <div class="d-flex align-items-center gap-2 p-2">
+                            <img src="" id="fotoPub-2" class="rounded-circle" width="40" height="40" alt="Foto do usuário">
+                            <span id="nomePub-2" class="fw-bold"></span>
+                        </div>
+                        <div>
+                            <img src="img/arroz,carne,salada.jpg" class="card-img-top img-fluid" alt="Imagem do Prato">
+                        </div>
+                        <div class="card-body">
+                            <div class="text-start d-flex align-items-center gap-3 mb-2">
+                                <a href="#" class="text-decoration-none" id="btn-like-2" onclick="toggleLike(2); return false;">
+                                    <i class="bi bi-hand-thumbs-up text-black" id="like-icon-2"></i>
+                                </a>
+                                <span id="like-2">10</span>
+                                <a href="#" class="text-decoration-none" id="btn-deslike-2" onclick="toggleDeslike(2); return false;">
+                                    <i class="bi bi-hand-thumbs-down text-black" id="deslike-icon-2"></i>
+                                </a>
+                                <span id="deslike-2">2</span>
+                                <a href="#" class="text-decoration-none" title="Ver comentários" onclick="toggleComentarios(2); return false;">
+                                    <i class="bi bi-chat-dots"></i> 5
+                                </a>
+                            </div>
+                            <p class="card-text">
+                                Uma deliciosa moqueca de peixe com temperos típicos brasileiros. Perfeita para um almoço especial.
+                            </p>
+                            <div class="comentarios-abaixo mt-2" id="comentarios-abaixo-2" style="display:none;">
+                                <div id="lista-comentarios-2"></div>
+                                <form class="mt-2 d-flex" onsubmit="adicionarComentario(event, 2)">
+                                    <input type="text" class="form-control me-2" id="input-comentario-2" placeholder="Digite seu comentário">
+                                    <button type="submit" class="btn btn-black" style="display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-send"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card card-custom mb-4" style="border: 1px solid #ccc;">
+                        <div class="d-flex align-items-center gap-2 p-2">
+                            <img src="" id="fotoPub-3" class="rounded-circle" width="40" height="40" alt="Foto do usuário">
+                            <span id="nomePub-3" class="fw-bold"></span>
+                        </div>
+                        <div>
+                            <img src="img/File-de-Frango.png" class="card-img-top img-fluid" alt="Imagem do Prato">
+                        </div>
+                        <div class="card-body">
+                            <div class="text-start d-flex align-items-center gap-3 mb-2">
+                                <a href="#" class="text-decoration-none" id="btn-like-3" onclick="toggleLike(3); return false;">
+                                    <i class="bi bi-hand-thumbs-up text-black" id="like-icon-3"></i>
+                                </a>
+                                <span id="like-3">15</span>
+                                <a href="#" class="text-decoration-none" id="btn-deslike-3" onclick="toggleDeslike(3); return false;">
+                                    <i class="bi bi-hand-thumbs-down text-black" id="deslike-icon-3"></i>
+                                </a>
+                                <span id="deslike-3">3</span>
+                                <a href="#" class="text-decoration-none" title="Ver comentários" onclick="toggleComentarios(3); return false;">
+                                    <i class="bi bi-chat-dots"></i> 8
+                                </a>
+                                <div id="nova-comentarios-3-container"></div>
+                            </div>
+                            <p class="card-text">
+                                A tradicional feijoada brasileira, acompanhada de arroz, couve e laranja. Um clássico irresistível.
+                            </p>
+                            <div class="comentarios-abaixo mt-2" id="comentarios-abaixo-3" style="display:none;">
+                                <div id="lista-comentarios-3"></div>
+                                <form class="mt-2 d-flex" onsubmit="adicionarComentario(event, 3)">
+                                    <input type="text" class="form-control me-2" id="input-comentario-3" placeholder="Digite seu comentário">
+                                    <button type="submit" class="btn btn-black" style="display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-send"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+            <div class="container-fluid mt-5">
+                <div class="col-md-3">
+                    <div class="botao-entrar">
+                        <button type="button" class="btn btn-branco" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            Entrar
+                        </button>
+                        <button type="button" class="btn btn-branco mt-2"
+                            onclick="window.location.href='cadastro.html'">
+                            Cadastrar
+                        </button>
+                        <button onclick="logout()" class="btn btn-secondary mt-2">Sair</button>
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 w-100 text-center" id="staticBackdropLabel">Login
+                                        </h1>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control" id="nome"
+                                                    placeholder="Digite seu e-mail">
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="password" class="form-control" id="senha"
+                                                    placeholder="Digite sua senha">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer text-center">
+                                        <div class="w-100 d-flex justify-content-center gap-3">
+                                            <button type="button" class="btn btn-branco border-laranja"
+                                                data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-branco border-laranja">Entrar</button>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+         </div>
+        </div>
+    </main>
+
+    <!-- Modal de Comentários -->
+    <div class="modal fade" id="modalComentarios" tabindex="-1" aria-labelledby="modalComentariosLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalComentariosLabel">Comentários</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="comentariosConteudo">
+                    <!-- Comentários serão inseridos aqui via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-warning text-white py-3 mt-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span class="fw-bold d-block mb-2">Sabor do Brasil</span>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+                <span class="text-white d-block mt-">Copyright &copy; 2025</span>
+            </div>
+        </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
